@@ -15,7 +15,9 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className={styles.main}>
-				<Header title={"ChatBLT (Bad Listener Tom)"} />
+				<section className={styles.appInfo}>
+					<Header title={"ChatBLT"} subTitle={"(Bad Listener Tom)"} />
+				</section>
 				<footer className={styles.footer}>
 					<GitHubLink link={"https://github.com/MollyJeanB/chat-blt"} />
 				</footer>

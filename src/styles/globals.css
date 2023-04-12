@@ -13,8 +13,8 @@ body {
 }
 
 body {
-	color: var(--color-black);
-	background: linear-gradient(var(--color-pale-pink), var(--color-pale-yellow));
+	color: var(--color-gray-2);
+	background: var(--color-dark-blue);
 	padding: var(--size-l);
 }
 
