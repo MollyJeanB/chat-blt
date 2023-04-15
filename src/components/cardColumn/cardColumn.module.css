@@ -2,6 +2,13 @@
 	margin-left: var(--size-s);
 }
 
+@media screen and (max-width: 550px) {
+	.columnWrapper:not(:first-child) {
+		margin-top: var(--size-s);
+		margin-left: 0;
+	}
+}
+
 .column {
 	list-style-type: none;
 	margin-left: 0;
@@ -26,4 +33,10 @@
 
 .card:not(:first-child) {
 	margin-top: var(--size-s);
+}
+
+@media screen and (max-width: 550px) {
+	.card {
+		max-width: 100%;
+	}
 }
