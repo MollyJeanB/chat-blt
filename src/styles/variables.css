@@ -13,10 +13,11 @@
 	--size-base: 3px;
 	--size-xxs: var(--size-base); /* 3px */
 	--size-xs: calc(var(--size-base) * 3); /* 9px */
-	--size-s: calc(var(--size-base) * 6); /* 18px */
-	--size-m: calc(var(--size-base) * 10); /* 30px */
-	--size-l: calc(var(--size-base) * 15); /* 45px */
-	--size-xl: calc(var(--size-base) * 20); /* 60px */
+	--size-s: calc(var(--size-base) * 4); /* 12px */
+	--size-m: calc(var(--size-base) * 6); /* 18px */
+	--size-l: calc(var(--size-base) * 10); /* 30px */
+	--size-xl: calc(var(--size-base) * 15); /* 45px */
+	--size-xxl: calc(var(--size-base) * 20); /* 60px */
 	/* font-weight */
 	--font-weight-thin: 100;
 	--font-weight-extra-light: 200;

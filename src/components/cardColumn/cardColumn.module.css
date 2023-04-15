@@ -1,0 +1,29 @@
+.columnWrapper:not(:first-child) {
+	margin-left: var(--size-s);
+}
+
+.column {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.columnHeading {
+	text-align: center;
+	font-size: var(--size-m);
+	font-weight: var(--font-weight-normal);
+	padding-bottom: var(--size-s);
+}
+
+.card {
+	background-color: var(--color-slate-blue);
+	border-radius: var(--border-radius-semi-rounded);
+	padding: var(--size-s);
+	font-size: 15px;
+	max-width: 230px;
+	text-align: center;
+}
+
+.card:not(:first-child) {
+	margin-top: var(--size-s);
+}

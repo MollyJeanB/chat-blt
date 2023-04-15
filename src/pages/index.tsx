@@ -1,6 +1,6 @@
 import Head from "next/head"
 import styles from "@/styles/page.module.css"
-import { GitHubLink, Header } from "@/components"
+import { GitHubLink, Header, InfoCards } from "@/components"
 
 export default function Home() {
 	return (
@@ -17,6 +17,9 @@ export default function Home() {
 			<main className={styles.main}>
 				<section className={styles.appInfo}>
 					<Header title={"ChatBLT"} subTitle={"(Bad Listener Tom)"} />
+				</section>
+				<section>
+					<InfoCards />
 				</section>
 				<footer className={styles.footer}>
 					<GitHubLink link={"https://github.com/MollyJeanB/chat-blt"} />

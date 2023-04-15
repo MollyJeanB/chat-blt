@@ -13,7 +13,7 @@ body {
 }
 
 body {
-	color: var(--color-gray-2);
+	color: var(--color-gray-1);
 	background: var(--color-dark-blue);
 	padding: var(--size-l);
 }

@@ -6,11 +6,11 @@
 }
 
 .appInfo {
-	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	padding: var(--size-xl) var(--size-l);
 }
 
 .footer {
