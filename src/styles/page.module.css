@@ -21,8 +21,14 @@
 
 .footer {
 	width: 100%;
-	margin-top: auto;
-	padding-top: var(--size-l);
+	position: fixed;
+	bottom: 0;
+	padding: var(--size-m);
+}
+
+.header {
+	width: 100%;
+	padding-bottom: var(--size-s);
 	display: flex;
 	justify-content: flex-end;
 }

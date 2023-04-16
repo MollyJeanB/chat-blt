@@ -20,7 +20,7 @@ export const InfoCards: React.FC = () => {
 				<Card>{`"What's the best way to get to the freeway from here?"`}</Card>
 			</CardColumn>
 			<CardColumn heading="Limitations">
-				<Card>{"May be boorish and frustrating."}</Card>
+				<Card>{"A sandwich would be a better conversation partner."}</Card>
 				<Card>{"Thinks he is smarter and more interesting than you."}</Card>
 				<Card>
 					{

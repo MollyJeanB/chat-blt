@@ -15,15 +15,16 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className={styles.main}>
+				<header className={styles.header}>
+					<GitHubLink link={"https://github.com/MollyJeanB/chat-blt"} />
+				</header>
 				<section className={styles.appInfo}>
 					<Header title={"ChatBLT"} subTitle={"(Bad Listener Tom)"} />
 				</section>
 				<section>
 					<InfoCards />
 				</section>
-				<footer className={styles.footer}>
-					<GitHubLink link={"https://github.com/MollyJeanB/chat-blt"} />
-				</footer>
+				<footer className={styles.footer}>{"footer to go here"}</footer>
 			</main>
 		</>
 	)
