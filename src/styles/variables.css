@@ -1,5 +1,6 @@
 :root {
 	/* colors */
+	--color-super-dark-blue: #292933;
 	--color-dark-blue: #343541;
 	--color-slate-blue: #40414f;
 	--color-white: #fff;
@@ -9,6 +10,10 @@
 	--color-gray-4: #bbb;
 	--color-gray-5: #9a9a9a;
 	--color-black: #000;
+	/* shadows */
+	--ring-offset-shadow: 0 0 transparent;
+	--ring-shadow: 0 0 transparent;
+	--shadow: 0 0 transparent;
 	/* sizes */
 	--size-base: 3px;
 	--size-xxs: var(--size-base); /* 3px */

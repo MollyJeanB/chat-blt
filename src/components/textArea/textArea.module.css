@@ -1,5 +1,60 @@
-.textArea {
+.formWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.form {
+	width: 716px;
+}
+
+@media screen and (max-width: 800px) {
+	.form {
+		width: 100%;
+	}
+}
+
+.inputWrapper {
+	display: flex;
+	padding: var(--size-s);
 	background: var(--color-slate-blue);
 	border: 1px solid var(--color-dark-blue);
 	border-radius: var(--border-radius-semi-rounded);
+	box-shadow: var(--ring-offset-shadow, 0 0 transparent),
+		var(--ring-shadow, 0 0 transparent), var(--shadow);
+}
+
+.textArea {
+	width: 100%;
+	font: unset;
+	resize: none;
+	background: transparent;
+	border: 1px solid var(--color-slate-blue);
+	display: block;
+	color: var(--color-gray-1);
+}
+
+.textArea:focus {
+	outline: unset;
+}
+
+.button {
+	font: unset;
+	background: transparent;
+	border: 1px solid var(--color-slate-blue);
+	color: var(--color-gray-4);
+	padding: var(--size-xs);
+	cursor: pointer;
+}
+
+.button:hover {
+	background: var(--color-super-dark-blue);
+}
+
+.warningText {
+	font-size: var(--size-s);
+	color: var(--color-gray-5);
+	padding: var(--size-s) 0 var(--size-s);
+	text-align: center;
 }

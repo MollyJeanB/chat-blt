@@ -6,7 +6,6 @@ import React, {
 	ChangeEvent,
 } from "react"
 import styles from "./textArea.module.css"
-import { Chance } from "chance"
 
 type PropsType = {
 	onSubmitForm: Function
@@ -41,14 +40,28 @@ export const TextArea: React.FC<PropsType> = ({ onSubmitForm }) => {
 	})
 
 	return (
-		<form>
-			<textarea
-				className={styles.textArea}
-				placeholder="Send a message..."
-				onChange={onChange}
-				value={inputText}
-			></textarea>
-			<button onClick={(event) => onSubmit(event)}>{"submit question"}</button>
-		</form>
+		<div className={styles.formWrapper}>
+			<form className={styles.form}>
+				<div className={styles.inputWrapper}>
+					<textarea
+						className={styles.textArea}
+						placeholder="Send a message..."
+						onChange={onChange}
+						value={inputText}
+					></textarea>
+					<button
+						className={styles.button}
+						onClick={(event) => onSubmit(event)}
+					>
+						{"S"}
+					</button>
+				</div>
+				<p className={styles.warningText}>
+					{
+						"Free research preview. ChatBLT may produce boorish and inaccurate information about people, places, NFTs, and BLTs."
+					}
+				</p>
+			</form>
+		</div>
 	)
 }
