@@ -43,6 +43,7 @@
 	font: unset;
 	background: transparent;
 	border: 1px solid var(--color-slate-blue);
+	border-radius: var(--border-radius-semi-rounded);
 	color: var(--color-gray-4);
 	padding: var(--size-xs);
 	cursor: pointer;

@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Chance } from "chance"
 import Head from "next/head"
 import styles from "@/styles/page.module.css"
-import { GitHubLink, Header, InfoCards, TextArea } from "@/components"
+import { GitHubLink, Header, InfoCards, TextInputForm } from "@/components"
 
 export default function Home() {
 	const chance = new Chance()
@@ -39,7 +39,7 @@ export default function Home() {
 					})}
 				</section>
 				<footer className={styles.footer}>
-					<TextArea onSubmitForm={onSubmitForm} />
+					<TextInputForm onSubmitForm={onSubmitForm} />
 				</footer>
 			</main>
 		</>

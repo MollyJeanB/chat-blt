@@ -5,13 +5,13 @@ import React, {
 	KeyboardEventHandler,
 	ChangeEvent,
 } from "react"
-import styles from "./textArea.module.css"
+import styles from "./textInputForm.module.css"
 
 type PropsType = {
 	onSubmitForm: Function
 }
 
-export const TextArea: React.FC<PropsType> = ({ onSubmitForm }) => {
+export const TextInputForm: React.FC<PropsType> = ({ onSubmitForm }) => {
 	const [inputText, setInputText] = useState<string>("")
 
 	const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -53,7 +53,7 @@ export const TextArea: React.FC<PropsType> = ({ onSubmitForm }) => {
 						className={styles.button}
 						onClick={(event) => onSubmit(event)}
 					>
-						{"S"}
+						{"Submit"}
 					</button>
 				</div>
 				<p className={styles.warningText}>
