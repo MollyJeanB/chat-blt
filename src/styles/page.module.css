@@ -24,6 +24,13 @@
 	position: fixed;
 	bottom: 0;
 	padding: var(--size-m);
+	background: var(--color-dark-blue);
+}
+
+@media screen and (max-width: 550px) {
+	.footer {
+		border-top: 1px solid var(--color-gray-5);
+	}
 }
 
 .header {
