@@ -4,12 +4,12 @@
 
 .title {
 	text-align: center;
-	font-size: 50px;
-	font-weight: var(--font-weight-bold);
+	font-size: 40px;
+	font-weight: var(--font-weight-semi-bold);
 }
 
 .subTitle {
 	text-align: center;
-	font-size: 20px;
-	padding-top: var(--size-xs);
+	color: var(--color-gray-4);
+	padding-top: var(--size-xxs);
 }

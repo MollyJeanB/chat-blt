@@ -1,0 +1,12 @@
+.infoCardsWrapper {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	padding: 0 var(--size-m);
+}
+
+@media screen and (max-width: 550px) {
+	.infoCardsWrapper {
+		flex-direction: column;
+	}
+}
