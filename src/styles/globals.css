@@ -14,7 +14,6 @@ body {
 body {
 	color: var(--color-gray-1);
 	background: var(--color-dark-blue);
-	padding: var(--size-m);
 }
 
 a {

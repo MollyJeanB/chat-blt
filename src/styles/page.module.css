@@ -39,4 +39,9 @@
 	padding-bottom: var(--size-xs);
 	display: flex;
 	justify-content: flex-end;
+	padding: var(--size-m);
+}
+
+.commentListSection {
+	width: 100%;
 }

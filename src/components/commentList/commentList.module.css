@@ -6,4 +6,22 @@
 
 .commentCard {
 	width: 100%;
+	padding: var(--size-m);
+}
+
+.backgroundLight {
+	background: var(--color-slate-blue);
+}
+
+.commentInner {
+	display: flex;
+	max-width: 575px;
+	margin: 0 auto;
+}
+
+.avatarWrapper {
+	min-width: var(--size-l);
+	height: var(--size-l);
+	margin-right: var(--size-m);
+	background: var(--color-super-dark-blue);
 }

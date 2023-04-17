@@ -7,5 +7,16 @@ type PropsType = {
 }
 
 export const CommentCard: React.FC<PropsType> = ({ comment }) => {
-	return <li className={styles.commentCard}>{comment.comment}</li>
+	const cardStyles: string =
+		comment.author === "User"
+			? `${styles.commentCard} ${styles.backgroundLight}`
+			: styles.commentCard
+	return (
+		<li className={cardStyles}>
+			<div className={styles.commentInner}>
+				<div className={styles.avatarWrapper} />
+				<p>{comment.comment}</p>
+			</div>
+		</li>
+	)
 }

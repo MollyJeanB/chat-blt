@@ -49,7 +49,7 @@ export default function Home() {
 					<Header title={"ChatBLT"} subTitle={"(Bad Listener Tom)"} />
 				</section>
 				<section>{!comments.length && <InfoCards />}</section>
-				<section>
+				<section className={styles.commentListSection}>
 					<CommentList comments={comments} />
 				</section>
 				<footer className={styles.footer}>
