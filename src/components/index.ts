@@ -1,5 +1,7 @@
 export { Card } from "./cardColumn/Card"
 export { CardColumn } from "./cardColumn/CardColumn"
+export { CommentCard } from "./commentList/CommentCard"
+export { CommentList } from "./commentList/CommentList"
 export { GitHubLink } from "./gitHubLink/GitHubLink"
 export { Header } from "./header/Header"
 export { InfoCards } from "./infoCards/InfoCards"

@@ -2,17 +2,33 @@ import { useState } from "react"
 import { Chance } from "chance"
 import Head from "next/head"
 import styles from "@/styles/page.module.css"
-import { GitHubLink, Header, InfoCards, TextInputForm } from "@/components"
+import {
+	CommentList,
+	GitHubLink,
+	Header,
+	InfoCards,
+	TextInputForm,
+} from "@/components"
+
+export type Comment = {
+	comment: string
+	author: "User" | "Tom"
+}
 
 export default function Home() {
 	const chance = new Chance()
-	const [comments, setComments] = useState<string[]>([])
-	const postResponse = (question: string) => {
-		setTimeout(() => setComments([...comments, question, chance.word()]), 1000)
+	const [comments, setComments] = useState<Comment[]>([])
+	const postResponse = (userComment: Comment) => {
+		const tomResponse: Comment = {
+			comment: chance.sentence(),
+			author: "Tom",
+		}
+		setTimeout(() => setComments([...comments, userComment, tomResponse]), 1000)
 	}
 	const onSubmitForm = (question: string) => {
-		setComments([...comments, question])
-		postResponse(question)
+		const userComment: Comment = { comment: question, author: "User" }
+		setComments([...comments, userComment])
+		postResponse(userComment)
 	}
 	return (
 		<>
@@ -34,9 +50,7 @@ export default function Home() {
 				</section>
 				<section>{!comments.length && <InfoCards />}</section>
 				<section>
-					{comments.map((comment) => {
-						return <p key={comment}>{comment}</p>
-					})}
+					<CommentList comments={comments} />
 				</section>
 				<footer className={styles.footer}>
 					<TextInputForm onSubmitForm={onSubmitForm} />
