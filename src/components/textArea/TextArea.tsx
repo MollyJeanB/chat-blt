@@ -4,7 +4,6 @@ import React, {
 	KeyboardEvent,
 	KeyboardEventHandler,
 	ChangeEvent,
-	MouseEventHandler,
 } from "react"
 import styles from "./textArea.module.css"
 import { Chance } from "chance"

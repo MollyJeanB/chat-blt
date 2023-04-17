@@ -6,14 +6,13 @@ import { GitHubLink, Header, InfoCards, TextArea } from "@/components"
 
 export default function Home() {
 	const chance = new Chance()
-	const [comments, setComments] = useState<string[]>(["first one for test"])
-	const postResponse = () => {
-		//currently creates some kinda race condition, eventually will be on a delay
-		// setComments([...comments, chance.word()])
+	const [comments, setComments] = useState<string[]>([])
+	const postResponse = (question: string) => {
+		setTimeout(() => setComments([...comments, question, chance.word()]), 1000)
 	}
 	const onSubmitForm = (question: string) => {
-		setComments([...comments, question, chance.word()])
-		postResponse()
+		setComments([...comments, question])
+		postResponse(question)
 	}
 	return (
 		<>
@@ -33,7 +32,7 @@ export default function Home() {
 				<section className={styles.appInfo}>
 					<Header title={"ChatBLT"} subTitle={"(Bad Listener Tom)"} />
 				</section>
-				<section>{comments.length === 1 && <InfoCards />}</section>
+				<section>{!comments.length && <InfoCards />}</section>
 				<section>
 					{comments.map((comment) => {
 						return <p key={comment}>{comment}</p>
