@@ -8,12 +8,10 @@ export default function Home() {
 	const chance = new Chance()
 	const [comments, setComments] = useState<string[]>(["first one for test"])
 	const postResponse = () => {
-		console.log("hit response")
 		//currently creates some kinda race condition, eventually will be on a delay
 		// setComments([...comments, chance.word()])
 	}
 	const onSubmitForm = (question: string) => {
-		console.log("submit form on main page", question)
 		setComments([...comments, question, chance.word()])
 		postResponse()
 	}

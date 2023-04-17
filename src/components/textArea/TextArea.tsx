@@ -4,7 +4,7 @@ import React, {
 	KeyboardEvent,
 	KeyboardEventHandler,
 	ChangeEvent,
-	useMemo,
+	MouseEventHandler,
 } from "react"
 import styles from "./textArea.module.css"
 import { Chance } from "chance"
@@ -20,42 +20,36 @@ export const TextArea: React.FC<PropsType> = ({ onSubmitForm }) => {
 		setInputText(event.target.value)
 	}
 
-	console.log("in component body", inputText)
-
-	const onSubmit = () => {
-		console.log("onsubmit", inputText)
+	//@ts-ignore
+	const onSubmit = (event) => {
+		event.preventDefault()
 		onSubmitForm(inputText)
 		setInputText("")
 	}
 
-	//currently def doesn't work like the button press
 	useEffect(() => {
-		const keyDownHandler: KeyboardEventHandler | any = (
-			event: KeyboardEvent
-		) => {
+		const keyDownHandler: KeyboardEventHandler = (event: KeyboardEvent) => {
 			if (event.code === "Enter" || event.code === "NumpadEnter") {
-				event.preventDefault()
-				event.stopPropagation()
-				console.log("hit submit key", inputText)
-				onSubmit()
+				onSubmit(event)
 			}
 		}
+		//@ts-ignore
 		document.addEventListener("keydown", keyDownHandler)
 		return () => {
+			//@ts-ignore
 			document.removeEventListener("keydown", keyDownHandler)
 		}
-	}, [])
+	})
 
 	return (
-		//this should be a form but it totally jacks up the submit behavior
-		<div>
+		<form>
 			<textarea
 				className={styles.textArea}
 				placeholder="Send a message..."
 				onChange={onChange}
 				value={inputText}
 			></textarea>
-			<button onClick={onSubmit}>{"submit question"}</button>
-		</div>
+			<button onClick={(event) => onSubmit(event)}>{"submit question"}</button>
+		</form>
 	)
 }
