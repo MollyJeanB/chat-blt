@@ -40,3 +40,7 @@
 		max-width: 100%;
 	}
 }
+
+.icon {
+	color: var(--color-gray-1);
+}
