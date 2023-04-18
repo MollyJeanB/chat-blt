@@ -42,5 +42,8 @@
 }
 
 .icon {
+	display: flex;
+	justify-content: center;
+	padding-bottom: var(--size-m);
 	color: var(--color-gray-1);
 }
