@@ -1,5 +1,4 @@
 import React from "react"
-import Image from "next/image"
 import { Flashlight, Sun, Alert } from "@/assets/svg"
 import styles from "./infoCards.module.css"
 import { CardColumn, Card } from "../"
