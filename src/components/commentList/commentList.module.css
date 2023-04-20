@@ -20,8 +20,11 @@
 }
 
 .avatarWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	min-width: var(--size-l);
 	height: var(--size-l);
 	margin-right: var(--size-m);
-	background: var(--color-super-dark-blue);
+	background: var(--color-teal);
 }

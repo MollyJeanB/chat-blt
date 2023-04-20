@@ -1,11 +1,15 @@
 import React from "react"
+import { Flashlight, Sun, Alert } from "@/assets/svg"
 import styles from "./infoCards.module.css"
 import { CardColumn, Card } from "../"
 
 export const InfoCards: React.FC = () => {
 	return (
 		<div className={styles.infoCardsWrapper}>
-			<CardColumn heading="Capabilities">
+			<CardColumn
+				heading="Capabilities"
+				icon={<Flashlight width={24} height={24} />}
+			>
 				<Card>
 					{
 						"Accurately simulates dialog with someone who is not listening to you."
@@ -14,12 +18,12 @@ export const InfoCards: React.FC = () => {
 				<Card>{"Mostly just waiting for his turn to speak."}</Card>
 				<Card>{"Won't remember what you said in this chat, or ever."}</Card>
 			</CardColumn>
-			<CardColumn heading="Examples">
+			<CardColumn heading="Examples" icon={<Sun width={24} height={24} />}>
 				<Card>{`"Explain quantum computing in convoluted terms."`}</Card>
 				<Card>{`"What is the most underrated cryptocurrency?"`}</Card>
 				<Card>{`"What's the best way to get to the freeway from here?"`}</Card>
 			</CardColumn>
-			<CardColumn heading="Limitations">
+			<CardColumn heading="Limitations" icon={<Alert width={24} height={24} />}>
 				<Card>{"A sandwich would be a better conversation partner."}</Card>
 				<Card>{"Thinks he is smarter and more interesting than you."}</Card>
 				<Card>
