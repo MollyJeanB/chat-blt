@@ -6,6 +6,7 @@ import React, {
 	ChangeEvent,
 } from "react"
 import styles from "./textInputForm.module.css"
+import { SendPlane } from "@/assets/svg"
 
 type PropsType = {
 	onSubmitForm: Function
@@ -43,17 +44,22 @@ export const TextInputForm: React.FC<PropsType> = ({ onSubmitForm }) => {
 		<div className={styles.formWrapper}>
 			<form className={styles.form}>
 				<div className={styles.inputWrapper}>
+					<label className={styles.visuallyHidden} htmlFor={"question"}>
+						{"Enter your question:"}
+					</label>
 					<textarea
 						className={styles.textArea}
 						placeholder="Send a message..."
 						onChange={onChange}
 						value={inputText}
+						id={"question"}
 					></textarea>
 					<button
 						className={styles.button}
 						onClick={(event) => onSubmit(event)}
 					>
-						{"Submit"}
+						<SendPlane height={16} width={16} />
+						<span className={styles.visuallyHidden}>{"Submit"}</span>
 					</button>
 				</div>
 				<p className={styles.warningText}>
