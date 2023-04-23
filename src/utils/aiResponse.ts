@@ -14,7 +14,7 @@ const phraseBank: string[] = [
 	`Please, a hot dog is not a sandwich. It's a hot dog.`,
 	`Some say that the Earl of Sandwich first consumed the dish while gambling. Not wanting to leave his cribbage game, he ordered his servants to bring him a piece of salt beef between two slices of bread. But one of his biographers theorizes that the first sandwich was actually consumed at his desk.`,
 	`Lettuce has been growing wild in the mediterranean for at least 4500 years. It was first cultivated by the ancient Egyptians, who turned it from a weed into a food crop.`,
-	`Eww, store-bought mayonnaise? I only eat homemade mayo made the traditional french way.`,
+	`Eww, store-bought mayonnaise? I only eat homemade mayo made the traditional French way.`,
 	`In 2006, a court in Boston, Massachusetts ruled that a sandwich must contain at least two slices of bread. So a taco is definitely not a sandwich.`,
 	`Not to brag but my sourdough starter is over 60 years old`,
 	`I would rather die than eat wilted iceberg lettuce`,
@@ -23,8 +23,21 @@ const phraseBank: string[] = [
 	`Actually, according to Anthony Bourdain, the best way to cook bacon is in the oven`,
 	`Anthony Bourdain said to never fry bacon naked.`,
 	`Yes tomatoes are fruits, but they are actually considered "culinary vegetables" due to their lower sugar content.`,
-	`In 1893, the U.S. supreme court declared that from a tax standpoint, the tomato is a vegetable because it is most often eaten as part of a meal.`,
+	`In 1893, the U.S. supreme court declared that from a tax standpoint, the tomato is a vegetable because it is most often eaten as part of the main meal.`,
 	`Hydroponic tomatoes are usually more bitter`,
+	`Don't you dare put pickles on that`,
+	`Actually, tomatoes are native to the Americas`,
+	`If you buy store-bought tomatoes you might as well just eat styrofoam`,
+	`I only eat heirloom tomatoes`,
+	`Romaine lettuce was associated with Min, the ancient Egyptian god of fertility because it's shaped like a phallus. So it's basically the most masculine type of leafy green.`,
+	`Bacon! Lettuce! Tomato!`,
 ]
 
-export const getAiResponse = (): string => getRandomWordFromArray(phraseBank)
+export const getAiResponse = (previousPhrase: string | undefined): string => {
+	let responsePhrase = getRandomWordFromArray(phraseBank)
+	//regenerate phrase if it matches the previous one
+	while (responsePhrase === previousPhrase) {
+		responsePhrase = getRandomWordFromArray(phraseBank)
+	}
+	return responsePhrase
+}

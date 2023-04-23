@@ -11,8 +11,13 @@ export const CommentList: React.FC<PropsType> = ({ comments }) => {
 	return (
 		<div>
 			<ul className={styles.commentList}>
-				{comments.map((comment) => {
-					return <CommentCard key={comment.comment} comment={comment} />
+				{comments.map((comment, index) => {
+					return (
+						<CommentCard
+							key={`${index}-${comment.comment}`}
+							comment={comment}
+						/>
+					)
 				})}
 			</ul>
 		</div>

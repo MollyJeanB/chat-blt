@@ -15,7 +15,7 @@ export const InfoCards: React.FC = () => {
 						"Accurately simulates dialog with someone who is not listening to you."
 					}
 				</Card>
-				<Card>{"Mostly just waiting for his turn to speak."}</Card>
+				<Card>{"Just waiting for his turn to speak (about sandwiches)."}</Card>
 				<Card>{"Won't remember what you said in this chat, or ever."}</Card>
 			</CardColumn>
 			<CardColumn heading="Examples" icon={<Sun width={24} height={24} />}>
