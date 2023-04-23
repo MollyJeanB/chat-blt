@@ -19,9 +19,9 @@ export const InfoCards: React.FC = () => {
 				<Card>{"Won't remember what you said in this chat, or ever."}</Card>
 			</CardColumn>
 			<CardColumn heading="Examples" icon={<Sun width={24} height={24} />}>
-				<Card>{`"Explain the history of leavened bread with great disdain."`}</Card>
+				<Card>{`"Explain the history of leavened bread."`}</Card>
 				<Card>{`"What is the most underrated lettuce variety?"`}</Card>
-				<Card>{`"What's the best way to get to the freeway from here?"`}</Card>
+				<Card>{`"Tell me more about heirloom tomatoes."`}</Card>
 			</CardColumn>
 			<CardColumn heading="Limitations" icon={<Alert width={24} height={24} />}>
 				<Card>{"A sandwich would be a better conversation partner."}</Card>

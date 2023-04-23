@@ -31,6 +31,8 @@ const phraseBank: string[] = [
 	`I only eat heirloom tomatoes`,
 	`Romaine lettuce was associated with Min, the ancient Egyptian god of fertility because it's shaped like a phallus. So it's basically the most masculine type of leafy green.`,
 	`Bacon! Lettuce! Tomato!`,
+	`In Ireland, a court ruled that Subway sandwich bread is not legally bread because it contains too much sugar.`,
+	`I have a lot of BLT NFTs. You should have bough in on the ground floor.`,
 ]
 
 export const getAiResponse = (previousPhrase: string | undefined): string => {
