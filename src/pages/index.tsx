@@ -9,6 +9,7 @@ import {
 	InfoCards,
 	TextInputForm,
 } from "@/components"
+import { getAiResponse } from "@/utils/aiResponse"
 
 export type Comment = {
 	comment: string
@@ -20,7 +21,7 @@ export default function Home() {
 	const [comments, setComments] = useState<Comment[]>([])
 	const postResponse = (userComment: Comment) => {
 		const tomResponse: Comment = {
-			comment: chance.sentence(),
+			comment: getAiResponse(),
 			author: "Tom",
 		}
 		setTimeout(() => setComments([...comments, userComment, tomResponse]), 1000)
