@@ -9,6 +9,7 @@ import {
 	InfoCards,
 	TextInputForm,
 } from "@/components"
+import { getAiResponse } from "@/utils/aiResponse"
 
 export type Comment = {
 	comment: string
@@ -19,8 +20,9 @@ export default function Home() {
 	const chance = new Chance()
 	const [comments, setComments] = useState<Comment[]>([])
 	const postResponse = (userComment: Comment) => {
+		const previousResponse = comments[comments.length - 1]?.comment
 		const tomResponse: Comment = {
-			comment: chance.sentence(),
+			comment: getAiResponse(previousResponse),
 			author: "Tom",
 		}
 		setTimeout(() => setComments([...comments, userComment, tomResponse]), 1000)
@@ -36,7 +38,7 @@ export default function Home() {
 				<title>ChatBLT</title>
 				<meta
 					name="description"
-					content="An amazing new AI advancement that accurately simulates a conversation with a person who is not listening to you."
+					content="An amazing new AI advancement that accurately simulates a conversation with a person who is not listening to you and only wants to talk about sandwiches."
 				/>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
