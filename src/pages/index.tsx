@@ -17,14 +17,6 @@ export type Comment = {
 
 export default function Home() {
 	const [comments, setComments] = useState<Comment[]>([])
-	// const postResponse = (userComment: Comment) => {
-	// 	const previousResponse = comments[comments.length - 1]?.comment
-	// 	const tomResponse: Comment = {
-	// 		comment: getAiResponse(previousResponse),
-	// 		author: "Tom",
-	// 	}
-	// 	setTimeout(() => setComments([...comments, userComment, tomResponse]), 1000)
-	// }
 	const onSubmitForm = (question: string) => {
 		const previousResponse = comments[comments.length - 1]?.comment
 		const userComment: Comment = { comment: question, author: "User" }
@@ -49,10 +41,12 @@ export default function Home() {
 				<header className={styles.header}>
 					<GitHubLink link={"https://github.com/MollyJeanB/chat-blt"} />
 				</header>
-				<section className={styles.appInfo}>
+				{ !comments.length && <section className={styles.appInfo}>
+					<div >
 					<Header title={"ChatBLT"} subTitle={"(Bad Listener Tom)"} />
-				</section>
-				<section>{!comments.length && <InfoCards />}</section>
+					<InfoCards />
+					</div>
+				</section>}
 				<section className={styles.commentListSection}>
 					<CommentList commentList={comments} />
 				</section>
