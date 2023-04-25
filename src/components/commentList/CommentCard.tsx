@@ -12,19 +12,32 @@ export const CommentCard: React.FC<PropsType> = ({
 	commentData,
 	isAnimated,
 }) => {
-	const [displayComment, setDisplayComment] = useState<string>("")
 	const { comment, author } = commentData
+	const [displayComment, setDisplayComment] = useState<string>("")
+	const [wordCounter, setWordCounter] = useState<number>(0)
+	const [isActivelyAnimating, setIsActivelyAnimating] = useState<boolean>(false)
 
 	useEffect(() => {
 		if (!isAnimated) {
 			setDisplayComment(comment)
 		} else {
+			const commentStrings: string[] = comment.split(" ")
 			const timer = setTimeout(() => {
-				setDisplayComment(comment)
-			}, 1000)
+				if (wordCounter < commentStrings.length) {
+					setIsActivelyAnimating(true)
+					const firstWord: string = commentStrings[wordCounter]
+					const secondWord: string | undefined =
+						commentStrings[wordCounter + 1] ?? ""
+
+					setDisplayComment(`${displayComment} ${firstWord} ${secondWord}`)
+					setWordCounter(wordCounter + 2)
+				} else {
+					setIsActivelyAnimating(false)
+				}
+			}, 300)
 			return () => clearTimeout(timer)
 		}
-	}, [commentData])
+	})
 
 	const isUserComment: boolean = author === "User"
 	const cardStyles: string = isUserComment
@@ -42,7 +55,10 @@ export const CommentCard: React.FC<PropsType> = ({
 		<li className={cardStyles}>
 			<div className={styles.commentInner}>
 				<div className={avatarWrapperStyles}>{icon}</div>
-				<p>{displayComment}</p>
+				<p>
+					{displayComment}{" "}
+					{isActivelyAnimating && <span className={styles.cursor} />}
+				</p>
 			</div>
 		</li>
 	)

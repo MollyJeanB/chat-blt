@@ -12,12 +12,12 @@ export const CommentList: React.FC<PropsType> = ({ commentList }) => {
 		<div>
 			<ul className={styles.commentList}>
 				{commentList.map((commentData, index) => {
-					const isAnimated: boolean = index === commentList.length - 1
+					const isLastComment: boolean = index === commentList.length - 1
 					return (
 						<CommentCard
 							key={`${index}-${commentData.comment}`}
 							commentData={commentData}
-							isAnimated={isAnimated}
+							isAnimated={isLastComment}
 						/>
 					)
 				})}
