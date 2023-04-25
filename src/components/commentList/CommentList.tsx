@@ -4,18 +4,20 @@ import { Comment } from "@/pages"
 import { CommentCard } from "./CommentCard"
 
 type PropsType = {
-	comments: Comment[]
+	commentList: Comment[]
 }
 
-export const CommentList: React.FC<PropsType> = ({ comments }) => {
+export const CommentList: React.FC<PropsType> = ({ commentList }) => {
 	return (
 		<div>
 			<ul className={styles.commentList}>
-				{comments.map((comment, index) => {
+				{commentList.map((commentData, index) => {
+					const isAnimated: boolean = index === commentList.length - 1
 					return (
 						<CommentCard
-							key={`${index}-${comment.comment}`}
-							comment={comment}
+							key={`${index}-${commentData.comment}`}
+							commentData={commentData}
+							isAnimated={isAnimated}
 						/>
 					)
 				})}

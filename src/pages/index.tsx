@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { Chance } from "chance"
 import Head from "next/head"
 import styles from "@/styles/page.module.css"
 import {
@@ -17,20 +16,23 @@ export type Comment = {
 }
 
 export default function Home() {
-	const chance = new Chance()
 	const [comments, setComments] = useState<Comment[]>([])
-	const postResponse = (userComment: Comment) => {
+	// const postResponse = (userComment: Comment) => {
+	// 	const previousResponse = comments[comments.length - 1]?.comment
+	// 	const tomResponse: Comment = {
+	// 		comment: getAiResponse(previousResponse),
+	// 		author: "Tom",
+	// 	}
+	// 	setTimeout(() => setComments([...comments, userComment, tomResponse]), 1000)
+	// }
+	const onSubmitForm = (question: string) => {
 		const previousResponse = comments[comments.length - 1]?.comment
+		const userComment: Comment = { comment: question, author: "User" }
 		const tomResponse: Comment = {
 			comment: getAiResponse(previousResponse),
 			author: "Tom",
 		}
-		setTimeout(() => setComments([...comments, userComment, tomResponse]), 1000)
-	}
-	const onSubmitForm = (question: string) => {
-		const userComment: Comment = { comment: question, author: "User" }
-		setComments([...comments, userComment])
-		postResponse(userComment)
+		setComments([...comments, userComment, tomResponse])
 	}
 	return (
 		<>
@@ -52,7 +54,7 @@ export default function Home() {
 				</section>
 				<section>{!comments.length && <InfoCards />}</section>
 				<section className={styles.commentListSection}>
-					<CommentList comments={comments} />
+					<CommentList commentList={comments} />
 				</section>
 				<footer className={styles.footer}>
 					<TextInputForm onSubmitForm={onSubmitForm} />
