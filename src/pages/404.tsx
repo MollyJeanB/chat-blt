@@ -12,7 +12,9 @@ export default function ErrorPage() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className={styles.main}>
-				<h1>{"Rats! This page cannot be found. 🐀"}</h1>
+				<div className={styles.appInfo}>
+					<p>{"Rats! This page cannot be found. 🐀"}</p>
+				</div>
 			</main>
 		</>
 	)

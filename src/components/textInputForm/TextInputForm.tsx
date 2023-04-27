@@ -1,4 +1,10 @@
-import React, { useState, useRef, ChangeEvent } from "react"
+import React, {
+	useState,
+	useRef,
+	ChangeEvent,
+	RefObject,
+	MouseEvent,
+} from "react"
 import styles from "./textInputForm.module.css"
 import { SendPlane } from "@/assets/svg"
 import { useAutoResizeTextArea } from "@/utils/useAutoResizeTextArea"
@@ -10,7 +16,8 @@ type PropsType = {
 
 export const TextInputForm: React.FC<PropsType> = ({ onSubmitForm }) => {
 	const [inputText, setInputText] = useState<string>("")
-	const textAreaRef = useRef<HTMLTextAreaElement>(null)
+	const textAreaRef: RefObject<HTMLTextAreaElement> =
+		useRef<HTMLTextAreaElement>(null)
 
 	useAutoResizeTextArea(textAreaRef.current, inputText)
 
@@ -18,8 +25,7 @@ export const TextInputForm: React.FC<PropsType> = ({ onSubmitForm }) => {
 		setInputText(event.target.value)
 	}
 
-	//@ts-ignore
-	const onSubmit = (event) => {
+	const onSubmit = (event: MouseEvent) => {
 		event.preventDefault()
 		onSubmitForm(inputText)
 		setInputText("")

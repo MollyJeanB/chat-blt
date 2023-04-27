@@ -9,10 +9,10 @@ export const useSubmitFormOnPressEnter = (submitAction: Function) => {
 				submitAction(event)
 			}
 		}
-		//@ts-ignore
+
 		document.addEventListener("keydown", keyDownHandler)
+
 		return () => {
-			//@ts-ignore
 			document.removeEventListener("keydown", keyDownHandler)
 		}
 	})
