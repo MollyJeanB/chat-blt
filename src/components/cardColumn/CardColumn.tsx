@@ -16,7 +16,7 @@ export const CardColumn: React.FC<PropsType> = ({
 		<div className={styles.columnWrapper}>
 			<div className={styles.columnHeaderWrapper}>
 				{icon && <div className={styles.icon}>{icon}</div>}
-				{heading && <h3 className={styles.columnHeading}>{heading}</h3>}
+				{heading && <h2 className={styles.columnHeading}>{heading}</h2>}
 			</div>
 			<ul className={styles.column}>{children}</ul>
 		</div>
