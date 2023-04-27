@@ -1,11 +1,4 @@
-import React, {
-	useState,
-	useEffect,
-	useRef,
-	KeyboardEvent,
-	KeyboardEventHandler,
-	ChangeEvent,
-} from "react"
+import React, { useState, useRef, ChangeEvent } from "react"
 import styles from "./textInputForm.module.css"
 import { SendPlane } from "@/assets/svg"
 import { useAutoResizeTextArea } from "@/utils/useAutoResizeTextArea"
