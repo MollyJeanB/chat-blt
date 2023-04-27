@@ -9,7 +9,7 @@ type PropsType = {
 
 export const CommentList: React.FC<PropsType> = ({ commentList }) => {
 	return (
-		<div>
+		<div className={styles.scrollContainer}>
 			<ul className={styles.commentList}>
 				{commentList.map((commentData, index) => {
 					const isLastComment: boolean = index === commentList.length - 1
@@ -22,6 +22,7 @@ export const CommentList: React.FC<PropsType> = ({ commentList }) => {
 					)
 				})}
 			</ul>
+			<div className={styles.scrollAnchor} />
 		</div>
 	)
 }

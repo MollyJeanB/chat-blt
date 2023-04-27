@@ -1,3 +1,12 @@
+.scrollContainer * {
+	overflow-anchor: none;
+}
+
+.scrollAnchor {
+	overflow-anchor: auto;
+	height: 1px;
+}
+
 .commentList {
 	list-style-type: none;
 	margin-left: 0;

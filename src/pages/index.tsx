@@ -26,6 +26,7 @@ export default function Home() {
 		}
 		setComments([...comments, userComment, tomResponse])
 	}
+	const isInChatMode: boolean = comments.length > 0
 	return (
 		<>
 			<Head>
@@ -41,15 +42,19 @@ export default function Home() {
 				<header className={styles.header}>
 					<GitHubLink link={"https://github.com/MollyJeanB/chat-blt"} />
 				</header>
-				{ !comments.length && <section className={styles.appInfo}>
-					<div >
-					<Header title={"ChatBLT"} subTitle={"(Bad Listener Tom)"} />
-					<InfoCards />
-					</div>
-				</section>}
-				<section className={styles.commentListSection}>
-					<CommentList commentList={comments} />
-				</section>
+				{!isInChatMode && (
+					<section className={styles.appInfo}>
+						<div>
+							<Header title={"ChatBLT"} subTitle={"(Bad Listener Tom)"} />
+							<InfoCards />
+						</div>
+					</section>
+				)}
+				{isInChatMode && (
+					<section className={styles.commentListSection}>
+						<CommentList commentList={comments} />
+					</section>
+				)}
 				<footer className={styles.footer}>
 					<TextInputForm onSubmitForm={onSubmitForm} />
 				</footer>
