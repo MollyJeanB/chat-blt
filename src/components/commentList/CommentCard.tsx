@@ -10,12 +10,13 @@ type PropsType = {
 
 export const CommentCard: React.FC<PropsType> = ({
 	commentData,
-	isAnimated,
+	isAnimated = false,
 }) => {
 	const { comment, author } = commentData
 	const [displayComment, setDisplayComment] = useState<string>("")
 	const [wordCounter, setWordCounter] = useState<number>(0)
 	const [isActivelyAnimating, setIsActivelyAnimating] = useState<boolean>(false)
+	const showCursor: boolean = isActivelyAnimating && isAnimated
 
 	useEffect(() => {
 		if (!isAnimated) {
@@ -56,8 +57,7 @@ export const CommentCard: React.FC<PropsType> = ({
 			<div className={styles.commentInner}>
 				<div className={avatarWrapperStyles}>{icon}</div>
 				<p>
-					{displayComment}{" "}
-					{isActivelyAnimating && <span className={styles.cursor} />}
+					{displayComment} {showCursor && <span className={styles.cursor} />}
 				</p>
 			</div>
 		</li>
