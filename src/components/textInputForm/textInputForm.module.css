@@ -60,7 +60,7 @@
 
 .warningText {
 	font-size: var(--size-s);
-	color: var(--color-gray-3);
+	color: var(--color-gray-4);
 	padding: var(--size-s) 0 var(--size-s);
 	text-align: center;
 }

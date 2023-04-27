@@ -1,5 +1,5 @@
 import React from "react"
-import { Flashlight, Sun, Alert } from "@/assets/svg"
+import { Bacon, Tomato, Bread } from "@/assets/svg"
 import styles from "./infoCards.module.css"
 import { CardColumn, Card } from "../"
 
@@ -8,7 +8,7 @@ export const InfoCards: React.FC = () => {
 		<div className={styles.infoCardsWrapper}>
 			<CardColumn
 				heading="Capabilities"
-				icon={<Flashlight width={24} height={24} />}
+				icon={<Bacon width={35} height={35} />}
 			>
 				<Card>
 					{
@@ -18,12 +18,15 @@ export const InfoCards: React.FC = () => {
 				<Card>{"Just waiting for his turn to speak (about sandwiches)."}</Card>
 				<Card>{"Won't remember what you said in this chat, or ever."}</Card>
 			</CardColumn>
-			<CardColumn heading="Examples" icon={<Sun width={24} height={24} />}>
+			<CardColumn heading="Examples" icon={<Bread width={35} height={35} />}>
 				<Card>{`"Explain the history of leavened bread."`}</Card>
 				<Card>{`"What is the most underrated lettuce variety?"`}</Card>
 				<Card>{`"Tell me more about heirloom tomatoes."`}</Card>
 			</CardColumn>
-			<CardColumn heading="Limitations" icon={<Alert width={24} height={24} />}>
+			<CardColumn
+				heading="Limitations"
+				icon={<Tomato width={35} height={35} />}
+			>
 				<Card>{"A sandwich would be a better conversation partner."}</Card>
 				<Card>{"Thinks he is smarter and more interesting than you."}</Card>
 				<Card>

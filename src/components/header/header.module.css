@@ -1,5 +1,5 @@
 .wrapper {
-	padding-bottom: 24px;
+	padding-bottom: var(--size-xl);
 }
 
 .title {

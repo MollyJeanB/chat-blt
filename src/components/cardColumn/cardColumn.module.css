@@ -50,7 +50,7 @@
 .icon {
 	display: flex;
 	justify-content: center;
-	padding-bottom: var(--size-m);
+	padding-bottom: var(--size-s);
 	color: var(--color-gray-1);
 }
 

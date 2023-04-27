@@ -53,7 +53,12 @@ export default function Home() {
 				{!isInChatMode && (
 					<section className={styles.appInfo}>
 						<div>
-							<Header title={"ChatBLT"} subTitle={"(Bad Listener Tom)"} />
+							<Header
+								title={"ChatBLT"}
+								subTitle={
+									"Bad Listener Tom | Bacon Lettuce Tomato | Blah blah La la Ta Ta"
+								}
+							/>
 							<InfoCards />
 						</div>
 					</section>
