@@ -1,6 +1,8 @@
-# ChatBLT (Bad Listener Tom)
+# ChatBLT 🥓🥬🍅
 
-### An amazing new AI advancement that accurately simulates a conversation with a person who is not listening to you and only wants to talk about sandwiches.
+Bad Listener Tom | Bacon Lettuce Tomato | Blah blah La la Ta Ta
+
+An amazing new AI advancement that accurately simulates a conversation with a person who is not listening to you and only wants to talk about sandwiches.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) via 🍽️ [MJB Boilerplate](https://github.com/MollyJeanB/mjb-boilerplate)
 
@@ -54,7 +56,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Attributions
-
-Icons via [Remix Icon](https://remixicon.com/).
