@@ -1,12 +1,15 @@
 import React, {
 	useState,
 	useEffect,
+	useRef,
 	KeyboardEvent,
 	KeyboardEventHandler,
 	ChangeEvent,
 } from "react"
 import styles from "./textInputForm.module.css"
 import { SendPlane } from "@/assets/svg"
+import { useAutoResizeTextArea } from "@/utils/useAutoResizeTextArea"
+import { useSubmitFormOnPressEnter } from "@/utils/useSubmitFormOnPressEnter"
 
 type PropsType = {
 	onSubmitForm: Function
@@ -14,6 +17,9 @@ type PropsType = {
 
 export const TextInputForm: React.FC<PropsType> = ({ onSubmitForm }) => {
 	const [inputText, setInputText] = useState<string>("")
+	const textAreaRef = useRef<HTMLTextAreaElement>(null)
+
+	useAutoResizeTextArea(textAreaRef.current, inputText)
 
 	const onChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
 		setInputText(event.target.value)
@@ -26,19 +32,7 @@ export const TextInputForm: React.FC<PropsType> = ({ onSubmitForm }) => {
 		setInputText("")
 	}
 
-	useEffect(() => {
-		const keyDownHandler: KeyboardEventHandler = (event: KeyboardEvent) => {
-			if (event.code === "Enter" || event.code === "NumpadEnter") {
-				onSubmit(event)
-			}
-		}
-		//@ts-ignore
-		document.addEventListener("keydown", keyDownHandler)
-		return () => {
-			//@ts-ignore
-			document.removeEventListener("keydown", keyDownHandler)
-		}
-	})
+	useSubmitFormOnPressEnter(onSubmit)
 
 	return (
 		<div className={styles.formWrapper}>
@@ -53,6 +47,7 @@ export const TextInputForm: React.FC<PropsType> = ({ onSubmitForm }) => {
 						onChange={onChange}
 						value={inputText}
 						id={"question"}
+						ref={textAreaRef}
 					></textarea>
 					<button
 						className={styles.button}
