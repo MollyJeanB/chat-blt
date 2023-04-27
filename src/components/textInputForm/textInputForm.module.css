@@ -28,8 +28,8 @@
 
 .textArea {
 	width: 100%;
-	min-height: 24px;
-	max-height: 200px;
+	height: 24px;
+	max-height: 100px;
 	font: unset;
 	resize: none;
 	background: transparent;
