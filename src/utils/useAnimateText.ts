@@ -12,7 +12,7 @@ export const useAnimateText = (text: string, interval: number = 300) => {
 				const firstWord: string = commentStrings[wordCounter]
 				const secondWord: string | undefined =
 					commentStrings[wordCounter + 1] ?? ""
-
+				//render text two words at a time
 				setAnimatedComment(`${animatedComment} ${firstWord} ${secondWord}`)
 				setWordCounter(wordCounter + 2)
 			} else {

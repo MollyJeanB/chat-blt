@@ -35,11 +35,17 @@ const phraseBank: string[] = [
 	`I have a lot of BLT NFTs. You should have bough in on the ground floor.`,
 ]
 
-export const getAiResponse = (previousPhrase: string | undefined): string => {
-	let responsePhrase = getRandomWordFromArray(phraseBank)
+export const getAiResponse = (
+	previousPhrase: string | undefined,
+	phrases: string[] = phraseBank
+): string => {
+	if (phrases.length < 2) {
+		return phrases[0]
+	}
+	let responsePhrase = getRandomWordFromArray(phrases)
 	//regenerate phrase if it matches the previous one
 	while (responsePhrase === previousPhrase) {
-		responsePhrase = getRandomWordFromArray(phraseBank)
+		responsePhrase = getRandomWordFromArray(phrases)
 	}
 	return responsePhrase
 }

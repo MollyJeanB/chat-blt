@@ -18,7 +18,7 @@
 .inputWrapper {
 	display: flex;
 	align-items: center;
-	padding: var(--size-s);
+	padding: var(--size-xs);
 	background: var(--color-slate-blue);
 	border: 1px solid var(--color-dark-blue);
 	border-radius: var(--border-radius-semi-rounded);
