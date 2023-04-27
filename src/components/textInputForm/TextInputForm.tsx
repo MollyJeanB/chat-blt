@@ -42,7 +42,7 @@ export const TextInputForm: React.FC<PropsType> = ({ onSubmitForm }) => {
 					</label>
 					<textarea
 						className={styles.textArea}
-						placeholder="Send a message..."
+						placeholder="Send a message."
 						onChange={onChange}
 						value={inputText}
 						id={"question"}
