@@ -1,10 +1,10 @@
 import React from "react"
 import styles from "./commentList.module.css"
-import { Comment } from "@/pages"
+import { CommentType } from "@/pages"
 import { CommentCard } from "./CommentCard"
 
 type PropsType = {
-	commentList: Comment[]
+	commentList: CommentType[]
 }
 
 export const CommentList: React.FC<PropsType> = ({ commentList }) => {

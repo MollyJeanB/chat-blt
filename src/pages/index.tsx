@@ -10,19 +10,27 @@ import {
 } from "@/components"
 import { getAiResponse } from "@/utils/aiResponse"
 
-export type Comment = {
+export enum CommentAuthorTypeMap {
+	USER = "User",
+	TOM = "Tom",
+}
+
+export type CommentType = {
 	comment: string
-	author: "User" | "Tom"
+	author: CommentAuthorTypeMap.USER | CommentAuthorTypeMap.TOM
 }
 
 export default function Home() {
-	const [comments, setComments] = useState<Comment[]>([])
+	const [comments, setComments] = useState<CommentType[]>([])
 	const onSubmitForm = (question: string) => {
 		const previousResponse = comments[comments.length - 1]?.comment
-		const userComment: Comment = { comment: question, author: "User" }
-		const tomResponse: Comment = {
+		const userComment: CommentType = {
+			comment: question,
+			author: CommentAuthorTypeMap.USER,
+		}
+		const tomResponse: CommentType = {
 			comment: getAiResponse(previousResponse),
-			author: "Tom",
+			author: CommentAuthorTypeMap.TOM,
 		}
 		setComments([...comments, userComment, tomResponse])
 	}
